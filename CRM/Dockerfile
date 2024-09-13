@@ -17,7 +17,7 @@ COPY src ./src
 RUN mvn clean package
 
 # Use a smaller base image with JDK 17 to run the application
-FROM openjdk:17-jre-slim
+FROM openjdk:17-jdk-slim
 
 # Set the working directory in the container
 WORKDIR /app
