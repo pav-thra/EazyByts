@@ -25,7 +25,7 @@ public class Tasks {
     @Column(name = "description")
     private String description;
 
-    @Enumerated(EnumType.STRING)
+    //@Enumerated(EnumType.STRING)
     /*The @Enumerated(EnumType.STRING) annotation tells Hibernate to store the enum values as strings in the database. The database field status will only accept these three values.
 
 EnumType.STRING saves the string representation of the enum (e.g., COMPLETED, PENDING, or IN_PROGRESS) in the database.
