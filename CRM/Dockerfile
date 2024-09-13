@@ -1,5 +1,5 @@
-# Use the official Maven image to build the application
-FROM maven:3.8.4-jdk-11 AS build
+# Use the official Maven image with JDK 17 to build the application
+FROM maven:3.8.4-openjdk-17 AS build
 
 # Set the working directory in the container
 WORKDIR /app
@@ -16,8 +16,8 @@ COPY src ./src
 # Package the application (creates the .jar file)
 RUN mvn clean package
 
-# Use a smaller base image to run the application
-FROM openjdk:11-jre-slim
+# Use a smaller base image with JDK 17 to run the application
+FROM openjdk:17-jre-slim
 
 # Set the working directory in the container
 WORKDIR /app
@@ -30,5 +30,3 @@ EXPOSE 8080
 
 # Command to run the application
 ENTRYPOINT ["java", "-jar", "EazyByts.jar"]
-
-
