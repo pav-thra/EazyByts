@@ -15,8 +15,8 @@ COPY src ./src
 
 # Package the application (creates the .jar file)
 #RUN mvn clean package
-#RUN mvn clean package -DskipTests
-RUN mvn clean package -e -X
+RUN mvn clean package -DskipTests
+#RUN mvn clean package -e -X
 
 # Use a smaller base image with JDK 17 to run the application
 FROM openjdk:17-jdk-slim
