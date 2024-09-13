@@ -31,9 +31,4 @@ EXPOSE 8080
 # Command to run the application
 ENTRYPOINT ["java", "-jar", "EazyByts.jar"]
 
-# Build the Docker image
-docker build -t eazybyts .
-
-# Run the Docker container
-docker run -p 8080:8080 eazybyts
 
